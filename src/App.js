@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from 'axios';
 
 // MUI stuff:
@@ -10,6 +9,7 @@ import {
   MuiThemeProvider,
   createMuiTheme
 } from "@material-ui/core";
+import Header from "./components/Header";
 
 const theme = createMuiTheme({
   palette: {
@@ -33,11 +33,7 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <NavBar />
-        <header>
-          <h1>The Beer Bank</h1>
-          <h5>Find your favorite beer here</h5>
-        </header>
-        <main />
+        <Header />
       </MuiThemeProvider>
     );
   }

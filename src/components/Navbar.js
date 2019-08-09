@@ -1,13 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Button } from '@material-ui/core';
 
-export class Navbar extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+const useStyles = makeStyles(theme => ({
+  topBar: {
+    flexGrow: 1,
+  },
+}));
+
+export default function Navbar() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.topBar}>
+      <AppBar position="static">
+        <Toolbar>
+          <Button color="inherit">home</Button>
+          <Button color="inherit">favorite</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default Navbar;
