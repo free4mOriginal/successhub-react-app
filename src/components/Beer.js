@@ -8,9 +8,9 @@ class Beer extends Component {
           <i className="far fa-star" onClick={this.props.handleClick} />
         </div>
         <img src={this.props.image_url} alt="Beer" />
-        <h2 className="cardTitle">
+        <h3 className="cardTitle">
           <b>{this.props.name}</b>
-        </h2>
+        </h3>
         <p className="tagline">{this.props.tagline}</p>
       </figure>
     );
