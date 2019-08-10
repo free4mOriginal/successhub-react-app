@@ -21,6 +21,7 @@ export default class Main extends Component {
     axios
       .get("https://api.punkapi.com/v2/beers")
       .then(res => {
+        console.log("res", res);
         return res.data.map(beerItem => {
           return {
             image_url: beerItem.image_url,
@@ -29,11 +30,12 @@ export default class Main extends Component {
             ibu: beerItem.ibu,
             abv: beerItem.abv,
             ebc: beerItem.ebc,
+            description: beerItem.description,
+            bestServed: beerItem.food_pairing
           };
         });
       })
       .then(beerItems => {
-        console.log(beerItems);
         this.setState({ allBeers: beerItems });
       })
       .catch(err => console.log(err));
@@ -43,14 +45,24 @@ export default class Main extends Component {
     return (
       <div className="flex-container">
         <div className="flex-container inner">
-          <Beer beerData={Data[0]} handleClick={this.handleClick} />
-          <Beer beerData={Data[1]} handleClick={this.handleClick} />
-          <Beer beerData={Data[2]} handleClick={this.handleClick} />
-          <Beer beerData={Data[3]} handleClick={this.handleClick} />
-          <Beer beerData={Data[4]} handleClick={this.handleClick} />
-          <Beer beerData={Data[5]} handleClick={this.handleClick} />
+          {this.state.allBeers ? (
+            this.state.allBeers.map(item => {
+              return (
+                <Beer
+                  key={item.title}
+                  image_url={item.image_url}
+                  name={item.title}
+                  tagline={item.tagline}
+                  handleClick={this.props.handleClick}
+                />
+              );
+            })
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
     );
   }
 }
+

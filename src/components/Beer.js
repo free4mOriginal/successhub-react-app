@@ -2,17 +2,16 @@ import React, { Component } from "react";
 
 class Beer extends Component {
   render() {
-    const { image_url, name, tagline } = this.props.beerData;
     return (
       <figure>
         <div className="favorite">
           <i className="far fa-star" onClick={this.props.handleClick} />
         </div>
-        <img src={image_url} alt="Beer" />
+        <img src={this.props.image_url} alt="Beer" />
         <h2 className="cardTitle">
-          <b>{name}</b>
+          <b>{this.props.name}</b>
         </h2>
-        <p className="tagline">{tagline}</p>
+        <p className="tagline">{this.props.tagline}</p>
       </figure>
     );
   }
