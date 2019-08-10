@@ -85,6 +85,18 @@ figure>img {
   padding: 10px;
 }
 
+.favorite {
+  position: relative;
+}
+
+figure>div>.fa-star {
+  display:block;
+  position:absolute;
+  top: 0;
+  right: 0;
+  color: #fe9814;
+}
+
 .cardTitle {
   color: #fe9814;
   margin: 0;
