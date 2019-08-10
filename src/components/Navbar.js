@@ -9,11 +9,11 @@ export default class Navbar extends Component {
     return (
       <div className="nav">
         <span onClick={this.handleClick}>
-          <i class="fas fa-home" /> HOME
+          <i className="fas fa-home" /> HOME
         </span>
         <span onClick={this.handleClick}>
-          <i class="fas fa-star" />
-          <i class="far fa-star" /> FAVORITE
+          <i className="fas fa-star" />
+          <i className="far fa-star" /> FAVORITE
         </span>
       </div>
     );

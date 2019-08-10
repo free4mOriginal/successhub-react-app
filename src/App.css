@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -44,4 +44,25 @@ h5 {
 
 span {
   cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 20px;
+  width: 580px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.beerCard {
+  
+}
+
+@media (max-width: 640px) {
+  input {
+    width: 90%
+  }
 }
