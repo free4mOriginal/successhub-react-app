@@ -45,7 +45,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ allBeers: this.searchBeerApi() });
+    this.searchBeerApi();
   }
 
   render() {
