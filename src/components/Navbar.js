@@ -1,24 +1,16 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Button } from '@material-ui/core';
+import React, { Component } from "react";
 
-const useStyles = makeStyles(theme => ({
-  topBar: {
-    flexGrow: 1,
-  },
-}));
+export default class Navbar extends Component {
+  handleClick() {
+    console.log("clicked");
+  }
 
-export default function Navbar() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.topBar}>
-      <AppBar position="static">
-        <Toolbar>
-          <Button color="inherit">home</Button>
-          <Button color="inherit">favorite</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+  render() {
+    return (
+      <div className="nav">
+        <span onClick={this.handleClick}>HOME</span>
+        <span onClick={this.handleClick}>FAVORITE</span>
+      </div>
+    );
+  }
 }
