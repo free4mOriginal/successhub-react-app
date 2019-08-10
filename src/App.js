@@ -10,7 +10,6 @@ class App extends Component {
     super(props);
     this.state = {
       allBeers: [],
-      favoredBeers: []
     };
     this.handleClick = this.handleClick.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
@@ -18,6 +17,13 @@ class App extends Component {
 
   handleClick() {
     console.log(this.state.favoredBeers);
+  }
+
+  favorBeer(id) {
+    console.log('im here', id);
+    // this.setState(() => ({
+    //   [this.state.allBeers[id].favored]: true
+    // }))
   }
 
   searchBeerApi() {
@@ -34,7 +40,9 @@ class App extends Component {
             abv: beerItem.abv,
             ebc: beerItem.ebc,
             description: beerItem.description,
-            bestServed: beerItem.food_pairing
+            bestServed: beerItem.food_pairing,
+            id: beerItem.id,
+            favored: false,
           };
         });
       })
@@ -53,7 +61,7 @@ class App extends Component {
       <div>
         <NavBar />
         <Header handleClick={this.handleClick} />
-        <Main allBeers={this.state.allBeers} />
+        <Main allBeers={this.state.allBeers} favorBeer={this.favorBeer} />
       </div>
     );
   }

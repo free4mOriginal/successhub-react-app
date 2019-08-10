@@ -14,7 +14,8 @@ export default class Main extends Component {
                   image_url={item.image_url}
                   name={item.title}
                   tagline={item.tagline}
-                  handleClick={this.props.handleClick}
+                  favorBeer={this.props.favorBeer}
+                  id={item.id}
                 />
               );
             })
