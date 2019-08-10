@@ -6,7 +6,7 @@ class Beer extends Component {
     return (
       <figure>
         <div className="favorite">
-          <i className="far fa-star" />
+          <i className="far fa-star" onClick={this.props.handleClick} />
         </div>
         <img src={image_url} alt="Beer" />
         <h2 className="cardTitle">

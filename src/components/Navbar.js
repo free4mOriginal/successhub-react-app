@@ -12,7 +12,8 @@ export default class Navbar extends Component {
           <i className="fas fa-home" /> HOME
         </span>
         <span onClick={this.handleClick}>
-          <i className="fas fa-star" /> FAVORITE
+          <i className="fas fa-star" />
+           FAVORITE
         </span>
       </div>
     );
