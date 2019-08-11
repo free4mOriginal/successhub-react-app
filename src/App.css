@@ -54,11 +54,15 @@ span {
   cursor: pointer;
 }
 
+.fa-search {
+  font-size: 1.3em;
+}
+
 input {
   width: 100%;
   padding: 10px;
   margin: 20px 20px;
-  width: 580px;
+  max-width: 580px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -111,7 +115,7 @@ figure>div>.fa-star {
 
 @media (max-width: 640px) {
   input {
-    width: 90%
+    width: 70%
   }
 
   figure {
