@@ -3,9 +3,9 @@ import React, { Component } from "react";
 class Beer extends Component {
   render() {
     return (
-      <figure onClick={() => this.props.favorBeer(this.props.id)} >
+      <figure>
         <div className="favorite">
-          <i className="far fa-star" />
+          <i className="far fa-star" onClick={() => this.props.favorBeer(this.props.id)} />
         </div>
         <img src={this.props.image_url} alt="Beer" />
         <h3 className="cardTitle">

@@ -13,6 +13,7 @@ class App extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
+    this.favorBeer = this.favorBeer.bind(this);
   }
 
   handleClick() {
@@ -20,17 +21,17 @@ class App extends Component {
   }
 
   favorBeer(id) {
-    console.log('im here', id);
-    // this.setState(() => ({
-    //   [this.state.allBeers[id].favored]: true
-    // }))
+    const currentState = this.state.allBeers;
+    console.log(currentState);
+    this.setState(() => ({
+      [this.state.allBeers[id-1].favored]: true
+    }));
   }
 
   searchBeerApi() {
     axios
       .get("https://api.punkapi.com/v2/beers")
       .then(res => {
-        console.log("res", res);
         return res.data.map(beerItem => {
           return {
             image_url: beerItem.image_url,
@@ -59,8 +60,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
-        <Header handleClick={this.handleClick} />
+        <NavBar handleClick={this.searchBeerApi} />
+        <Header handleClick={this.searchBeerApi} />
         <Main allBeers={this.state.allBeers} favorBeer={this.favorBeer} />
       </div>
     );
