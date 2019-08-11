@@ -21,24 +21,24 @@ class App extends Component {
   }
 
   toggleFavor(index) {
-    // console.log(this.state.allBeers);
-    // console.log('before', this.state.allBeers[index].favored);
+    console.log(this.state.allBeers);
+    console.log('before', this.state.allBeers[index].favored);
+
     if (!this.state.allBeers[index].favored) {
       this.setState(prevState => ({
         allBeers: prevState.allBeers.map(
-          beer => beer.index !== index ? { ...beer, favored: true } : beer
+          beer => beer.index === index ? { ...beer, favored: true } : beer
         )
       }));
       return false;
     } else {
       this.setState(prevState => ({
         allBeers: prevState.allBeers.map(
-          beer => beer.index !== index ? { ...beer, favored: false } : beer
+          beer => beer.index === index ? { ...beer, favored: false } : beer
         )
       }));
       return true;
     }
-    // console.log('after', this.state.allBeers[index].favored, index);
   }
 
   searchBeerApi(term) {
