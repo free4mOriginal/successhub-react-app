@@ -50,7 +50,7 @@ h5 {
   padding-top: 50px;
 }
 
-span {
+span, .fa-search {
   cursor: pointer;
 }
 
