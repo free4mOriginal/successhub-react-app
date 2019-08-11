@@ -5,7 +5,11 @@ class Beer extends Component {
     return (
       <figure>
         <div className="favorite">
-          <i className="far fa-star" onClick={() => this.props.favorBeer(this.props.index)} />
+        {this.props.favored[this.props.index].favored ? (
+          <i className="fas fa-star" onClick={() => this.props.toggleFavor(this.props.index)} />
+        ) : (
+          <i className="far fa-star" onClick={() => this.props.toggleFavor(this.props.index)} />
+        )}
         </div>
         <img src={this.props.image_url} alt="Beer" />
         <h3 className="cardTitle">

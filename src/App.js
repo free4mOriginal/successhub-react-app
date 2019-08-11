@@ -13,17 +13,32 @@ class App extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
-    this.favorBeer = this.favorBeer.bind(this);
+    this.toggleFavor = this.toggleFavor.bind(this);
   }
 
   handleClick() {
     console.log(this.state.favoredBeers);
   }
 
-  favorBeer(index) {
-    this.setState(() => ({
-      [this.state.allBeers[index].favored]: true
-    }));
+  toggleFavor(index) {
+    // console.log(this.state.allBeers);
+    // console.log('before', this.state.allBeers[index].favored);
+    if (!this.state.allBeers[index].favored) {
+      this.setState(prevState => ({
+        allBeers: prevState.allBeers.map(
+          beer => beer.index !== index ? { ...beer, favored: true } : beer
+        )
+      }));
+      return false;
+    } else {
+      this.setState(prevState => ({
+        allBeers: prevState.allBeers.map(
+          beer => beer.index !== index ? { ...beer, favored: false } : beer
+        )
+      }));
+      return true;
+    }
+    // console.log('after', this.state.allBeers[index].favored, index);
   }
 
   searchBeerApi(term) {
@@ -41,7 +56,7 @@ class App extends Component {
       <div>
         <NavBar searchBeerApi={this.searchBeerApi} />
         <Header searchBeerApi={this.searchBeerApi} />
-        <Main allBeers={this.state.allBeers} favorBeer={this.favorBeer} />
+        <Main allBeers={this.state.allBeers} toggleFavor={this.toggleFavor} favored={this.state.allBeers} />
       </div>
     );
   }
