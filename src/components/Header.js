@@ -15,7 +15,7 @@ export class Header extends Component {
   }
 
   handleSearch() {
-      this.props.searchBeerApi(this.state.term);
+    this.props.searchBeerApi(this.state.term);
   }
 
   render() {

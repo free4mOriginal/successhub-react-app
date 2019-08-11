@@ -15,7 +15,9 @@ const Api = {
             abv: beerItem.abv,
             ebc: beerItem.ebc,
             description: beerItem.description,
-            bestServed: beerItem.food_pairing
+            bestServed: beerItem.food_pairing,
+            index: beerItem.id-1,
+            favored: false
           };
         });
       })
@@ -32,7 +34,9 @@ const Api = {
             abv: beerItem.abv,
             ebc: beerItem.ebc,
             description: beerItem.description,
-            bestServed: beerItem.food_pairing
+            bestServed: beerItem.food_pairing,
+            index: beerItem.id-1,
+            favored: false
           };
         });
       })

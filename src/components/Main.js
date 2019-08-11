@@ -15,7 +15,7 @@ export default class Main extends Component {
                   name={item.title}
                   tagline={item.tagline}
                   favorBeer={this.props.favorBeer}
-                  id={item.id}
+                  index={item.index}
                 />
               );
             })

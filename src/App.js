@@ -20,11 +20,9 @@ class App extends Component {
     console.log(this.state.favoredBeers);
   }
 
-  favorBeer(id) {
-    const currentState = this.state.allBeers;
-    console.log(currentState);
+  favorBeer(index) {
     this.setState(() => ({
-      [this.state.allBeers[id - 1].favored]: true
+      [this.state.allBeers[index].favored]: true
     }));
   }
 
@@ -34,14 +32,14 @@ class App extends Component {
     });
   }
 
-  // componentDidMount() {
-  //   this.searchBeerApi();
-  // }
+  componentDidMount() {
+    this.searchBeerApi();
+  }
 
   render() {
     return (
       <div>
-        <NavBar handleClick={this.searchBeerApi} />
+        <NavBar searchBeerApi={this.searchBeerApi} />
         <Header searchBeerApi={this.searchBeerApi} />
         <Main allBeers={this.state.allBeers} favorBeer={this.favorBeer} />
       </div>

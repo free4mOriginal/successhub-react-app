@@ -1,17 +1,28 @@
 import React, { Component } from "react";
 
-export default class Navbar extends Component {
+export class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch() {
+    this.props.searchBeerApi('');
+  }
+
   render() {
     return (
       <div className="nav">
-        <span onClick={this.props.handleClick}>
+        <span onClick={this.handleSearch}>
           <i className="fas fa-home" /> HOME
         </span>
-        <span onClick={this.handleClick}>
+        <span>
           <i className="fas fa-star" />
-           FAVORITE
+          FAVORITE
         </span>
       </div>
     );
   }
 }
+
+export default Navbar;

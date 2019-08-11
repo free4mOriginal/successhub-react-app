@@ -5,7 +5,7 @@ class Beer extends Component {
     return (
       <figure>
         <div className="favorite">
-          <i className="far fa-star" onClick={() => this.props.favorBeer(this.props.id)} />
+          <i className="far fa-star" onClick={() => this.props.favorBeer(this.props.index)} />
         </div>
         <img src={this.props.image_url} alt="Beer" />
         <h3 className="cardTitle">
