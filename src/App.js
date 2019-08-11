@@ -11,18 +11,18 @@ class App extends Component {
     this.state = {
       allBeers: []
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleFavorites = this.handleFavorites.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
     this.toggleFavor = this.toggleFavor.bind(this);
   }
 
-  handleClick() {
-    console.log(this.state.favoredBeers);
+  handleFavorites() {
+    console.log(this.state.allBeers);
   }
 
   toggleFavor(index) {
-    console.log(this.state.allBeers);
-    console.log('before', this.state.allBeers[index].favored);
+    // console.log(this.state.allBeers);
+    // console.log('before', this.state.allBeers[index].favored);
 
     if (!this.state.allBeers[index].favored) {
       this.setState(prevState => ({
@@ -54,7 +54,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar searchBeerApi={this.searchBeerApi} />
+        <NavBar handleFavorites={this.handleFavorites} />
         <Header searchBeerApi={this.searchBeerApi} />
         <Main allBeers={this.state.allBeers} toggleFavor={this.toggleFavor} favored={this.state.allBeers} />
       </div>

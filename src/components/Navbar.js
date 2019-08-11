@@ -7,7 +7,7 @@ export default class Navbar extends Component {
         <span onClick={() => this.props.searchBeerApi('')}>
           <i className="fas fa-home"/> HOME
         </span>
-        <span>
+        <span onClick={() => this.props.handleFavorites()}>
           <i className="fas fa-star"/> FAVORITE
         </span>
       </div>
