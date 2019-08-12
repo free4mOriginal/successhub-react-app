@@ -19,29 +19,27 @@ class App extends Component {
 
   handleFavorites() {
     this.setState(prevState => ({
-      allBeers: prevState.allBeers.map(
-        beer => beer.favored ? { ...beer, favored: true } : beer
+      allBeers: prevState.allBeers.map(beer =>
+        beer.favored ? { ...beer, favored: true } : beer
       )
     }));
   }
 
-  toggleFavor(index) {
-    console.log(this.state.allBeers);
-    
-    if (!this.state.allBeers[index].favored) {
+  toggleFavor(id) {
+    let selectedBeer = this.state.allBeers.filter(item => item.id === id);
+
+    if (!selectedBeer[0].favored) {
       this.setState(prevState => ({
-        allBeers: prevState.allBeers.map(
-          beer => beer.index === index ? { ...beer, favored: true } : beer
+        allBeers: prevState.allBeers.map(beer =>
+          beer.id === id ? { ...beer, favored: true } : beer
         )
       }));
-      return false;
     } else {
       this.setState(prevState => ({
-        allBeers: prevState.allBeers.map(
-          beer => beer.index === index ? { ...beer, favored: false } : beer
+        allBeers: prevState.allBeers.map(beer =>
+          beer.id === id ? { ...beer, favored: false } : beer
         )
       }));
-      return true;
     }
   }
 
@@ -52,20 +50,25 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.searchBeerApi('');
+    this.searchBeerApi("");
   }
 
   render() {
-    return (
-      this.state.allBeers ? (
-        <div>
-        <NavBar handleFavorites={this.handleFavorites} searchBeerApi={this.searchBeerApi} />
+    return this.state.allBeers ? (
+      <div>
+        <NavBar
+          handleFavorites={this.handleFavorites}
+          searchBeerApi={this.searchBeerApi}
+        />
         <Header searchBeerApi={this.searchBeerApi} />
-        <Main allBeers={this.state.allBeers} toggleFavor={this.toggleFavor} allBeersState={this.state.allBeers} />
+        <Main
+          allBeers={this.state.allBeers}
+          toggleFavor={this.toggleFavor}
+          allBeersState={this.state.allBeers}
+        />
       </div>
-      ) : (
-        <p>Loading...</p>
-      )
+    ) : (
+      <p>Loading...</p>
     );
   }
 }

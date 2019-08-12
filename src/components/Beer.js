@@ -2,20 +2,18 @@ import React, { Component } from "react";
 
 class Beer extends Component {
   render() {
-    const { index, allBeersState, image_url, name, tagline, toggleFavor } = this.props;
-
-    console.log(index, allBeersState, allBeersState[index]);
+    const { id, favored, image_url, name, tagline, toggleFavor } = this.props;
 
     return (
       <figure>
         <div className="favorite">
-          {true ? (
+          {favored ? (
             <i className="fas fa-star"
-              onClick={() => toggleFavor(index)}
+              onClick={() => toggleFavor(id)}
             />
           ) : (
             <i className="far fa-star"
-              onClick={() => toggleFavor(index)}
+              onClick={() => toggleFavor(id)}
             />
           )}
         </div>

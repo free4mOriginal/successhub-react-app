@@ -16,7 +16,6 @@ const Api = {
             ebc: beerItem.ebc,
             description: beerItem.description,
             bestServed: beerItem.food_pairing,
-            index: parseInt(beerItem.id-1),
             favored: false,
             id: beerItem.id
           };
@@ -36,7 +35,6 @@ const Api = {
             ebc: beerItem.ebc,
             description: beerItem.description,
             bestServed: beerItem.food_pairing,
-            index: parseInt(beerItem.id-1),
             favored: false,
             id: beerItem.id
           };
