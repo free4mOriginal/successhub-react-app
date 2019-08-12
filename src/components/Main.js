@@ -8,6 +8,7 @@ export default class Main extends Component {
         <div className="flex-container inner">
           {this.props.allBeers ? (
             this.props.allBeers.map(item => {
+              console.log(this.props.allBeersState)
               return (
                 <Beer
                   key={item.title}
@@ -16,7 +17,7 @@ export default class Main extends Component {
                   tagline={item.tagline}
                   toggleFavor={this.props.toggleFavor}
                   index={item.index}
-                  favored={this.props.favored}
+                  allBeersState={this.props.allBeersState}
                 />
               );
             })

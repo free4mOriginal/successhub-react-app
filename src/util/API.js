@@ -4,7 +4,7 @@ const Api = {
   searchBeers(term) {
     if(!term) {
       return axios
-      .get('https://api.punkapi.com/v2/beers')
+      .get('https://api.punkapi.com/v2/beers?per_page=80')
       .then(res => {
         return res.data.map(beerItem => {
           return {
@@ -16,8 +16,9 @@ const Api = {
             ebc: beerItem.ebc,
             description: beerItem.description,
             bestServed: beerItem.food_pairing,
-            index: beerItem.id-1,
-            favored: false
+            index: parseInt(beerItem.id-1),
+            favored: false,
+            id: beerItem.id
           };
         });
       })
@@ -35,8 +36,9 @@ const Api = {
             ebc: beerItem.ebc,
             description: beerItem.description,
             bestServed: beerItem.food_pairing,
-            index: beerItem.id-1,
-            favored: false
+            index: parseInt(beerItem.id-1),
+            favored: false,
+            id: beerItem.id
           };
         });
       })

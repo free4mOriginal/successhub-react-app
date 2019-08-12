@@ -2,24 +2,28 @@ import React, { Component } from "react";
 
 class Beer extends Component {
   render() {
+    const { index, allBeersState, image_url, name, tagline, toggleFavor } = this.props;
+
+    console.log(index, allBeersState, allBeersState[index]);
+
     return (
       <figure>
         <div className="favorite">
-          {this.props.favored[this.props.index].favored ? (
+          {true ? (
             <i className="fas fa-star"
-              onClick={() => this.props.toggleFavor(this.props.index)}
+              onClick={() => toggleFavor(index)}
             />
           ) : (
             <i className="far fa-star"
-              onClick={() => this.props.toggleFavor(this.props.index)}
+              onClick={() => toggleFavor(index)}
             />
           )}
         </div>
-        <img src={this.props.image_url} alt="Beer" />
+        <img src={image_url} alt="Beer" />
         <h3 className="cardTitle">
-          <b>{this.props.name}</b>
+          <b>{name}</b>
         </h3>
-        <p className="tagline">{this.props.tagline}</p>
+        <p className="tagline">{tagline}</p>
       </figure>
     );
   }

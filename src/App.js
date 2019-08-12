@@ -9,7 +9,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allBeers: []
+      allBeers: [],
+      favoredBeers: []
     };
     this.handleFavorites = this.handleFavorites.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
@@ -26,8 +27,7 @@ class App extends Component {
 
   toggleFavor(index) {
     console.log(this.state.allBeers);
-    // console.log('before', this.state.allBeers[index].favored);
-
+    
     if (!this.state.allBeers[index].favored) {
       this.setState(prevState => ({
         allBeers: prevState.allBeers.map(
@@ -52,16 +52,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.searchBeerApi();
+    this.searchBeerApi('');
   }
 
   render() {
     return (
-      <div>
-        <NavBar handleFavorites={this.handleFavorites} />
+      this.state.allBeers ? (
+        <div>
+        <NavBar handleFavorites={this.handleFavorites} searchBeerApi={this.searchBeerApi} />
         <Header searchBeerApi={this.searchBeerApi} />
-        <Main allBeers={this.state.allBeers} toggleFavor={this.toggleFavor} favored={this.state.allBeers} />
+        <Main allBeers={this.state.allBeers} toggleFavor={this.toggleFavor} allBeersState={this.state.allBeers} />
       </div>
+      ) : (
+        <p>Loading...</p>
+      )
     );
   }
 }
