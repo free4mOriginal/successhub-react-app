@@ -19,9 +19,7 @@ class App extends Component {
 
   handleFavorites() {
     this.setState(prevState => ({
-      allBeers: prevState.allBeers.map(beer =>
-        beer.favored ? { ...beer, favored: true } : beer
-      )
+      allBeers: prevState.allBeers.filter(beer => beer.favored)
     }));
   }
 
@@ -64,7 +62,6 @@ class App extends Component {
         <Main
           allBeers={this.state.allBeers}
           toggleFavor={this.toggleFavor}
-          allBeersState={this.state.allBeers}
         />
       </div>
     ) : (

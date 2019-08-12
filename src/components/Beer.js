@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Beer extends Component {
+export default class Beer extends Component {
   render() {
     const { id, favored, image_url, name, tagline, toggleFavor } = this.props;
 
@@ -27,4 +27,3 @@ class Beer extends Component {
   }
 }
 
-export default Beer;
