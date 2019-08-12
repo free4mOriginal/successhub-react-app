@@ -17,11 +17,15 @@ class App extends Component {
   }
 
   handleFavorites() {
-    console.log(this.state.allBeers);
+    this.setState(prevState => ({
+      allBeers: prevState.allBeers.map(
+        beer => beer.favored ? { ...beer, favored: true } : beer
+      )
+    }));
   }
 
   toggleFavor(index) {
-    // console.log(this.state.allBeers);
+    console.log(this.state.allBeers);
     // console.log('before', this.state.allBeers[index].favored);
 
     if (!this.state.allBeers[index].favored) {
