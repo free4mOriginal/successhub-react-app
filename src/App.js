@@ -10,7 +10,6 @@ class App extends Component {
     super(props);
     this.state = {
       allBeers: [],
-      favoredBeers: []
     };
     this.handleFavorites = this.handleFavorites.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
