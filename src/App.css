@@ -50,7 +50,7 @@ h5 {
   padding-top: 50px;
 }
 
-span, .fa-search {
+span, .fa-search, .close {
   cursor: pointer;
 }
 
@@ -95,12 +95,13 @@ figure>img {
   position: relative;
 }
 
-figure>div>.fa-star {
+figure>div>.fa-star, .fa-times-circle {
   display:block;
   position:absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   color: #fe9814;
+  font-size: 1.2em;
 }
 
 .cardTitle {
@@ -122,20 +123,17 @@ figure>div>.fa-star {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 999;
 }
 
 .window {
+  position: relative;
   background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 2px 2px 2px #222;
-  max-width: 500px;
-  min-height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+  width: 500px;
+  height: 550px;
   padding: 20px;
-}
-
-.open, .close {  
-  font-size: 1em;
-  cursor: pointer;
 }
 
 @media (max-width: 640px) {

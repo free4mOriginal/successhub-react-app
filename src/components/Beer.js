@@ -22,6 +22,12 @@ export default class Beer extends Component {
     return (
       <Fragment>
         <figure>
+          {this.state.isOpen && (
+            <Modal onToggleModal={this.toggleModal}>
+              <p>Modal</p>
+              <p>Data</p>
+            </Modal>
+          )}
           <div className="favorite">
             {favored ? (
               <i className="fas fa-star" onClick={() => toggleFavor(id)} />
@@ -35,12 +41,6 @@ export default class Beer extends Component {
           </h3>
           <p className="tagline">{tagline}</p>
         </figure>
-        {this.state.isOpen && (
-          <Modal onToggleModal={this.toggleModal}>
-            <p>Modal</p>
-            <p>Data</p>
-          </Modal>
-        )}
       </Fragment>
     );
   }
@@ -50,13 +50,11 @@ const Modal = ({ children, onToggleModal }) => {
   return (
     <div
       className="background"
-      style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
       onClick={onToggleModal}
     >
       <div className="window" onClick={event => event.stopPropagation()}>
-        <button className="close" onClick={onToggleModal}>
-          Close here
-        </button>
+        <i className="far fa-times-circle close" onClick={onToggleModal} />
         {children}
       </div>
     </div>
