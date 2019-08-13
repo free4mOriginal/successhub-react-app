@@ -6,7 +6,6 @@ export default class Beer extends Component {
     this.state = {
       isOpen: false
     };
-
     this.toggleModal = this.toggleModal.bind(this);
   }
 
@@ -17,17 +16,42 @@ export default class Beer extends Component {
   }
 
   render() {
-    const { id, favored, image_url, name, tagline, toggleFavor } = this.props;
+    const {
+      id,
+      favored,
+      image_url,
+      name,
+      tagline,
+      toggleFavor,
+      ibu,
+      abv,
+      ebc,
+      description,
+      bestServed
+    } = this.props;
 
     return (
       <Fragment>
+        {this.state.isOpen && (
+          <Modal onToggleModal={this.toggleModal}>
+            <img
+              onClick={this.toggleModal}
+              src={image_url}
+              alt="Beer"
+              className="modal-img"
+            />
+            <h3 className="cardTitle">
+              <b>{name}</b>
+            </h3>
+            <p className="tagline">{tagline}</p>
+            <hr className="line"/>
+            <br/>
+            <span><b>IBU:</b> {ibu}</span>
+            <span><b>ABV:</b> {abv}</span>
+            <span><b>EBC:</b> {ebc}</span>
+          </Modal>
+        )}
         <figure>
-          {this.state.isOpen && (
-            <Modal onToggleModal={this.toggleModal}>
-              <p>Modal</p>
-              <p>Data</p>
-            </Modal>
-          )}
           <div className="favorite">
             {favored ? (
               <i className="fas fa-star" onClick={() => toggleFavor(id)} />

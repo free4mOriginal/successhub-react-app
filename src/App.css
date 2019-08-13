@@ -107,6 +107,7 @@ figure>div>.fa-star, .fa-times-circle {
 .cardTitle {
   color: #fe9814;
   margin: 0;
+  padding-top: 20px;
 }
 
 .tagline {
@@ -131,9 +132,20 @@ figure>div>.fa-star, .fa-times-circle {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
-  width: 500px;
-  height: 550px;
+  width: 600px;
   padding: 20px;
+}
+
+.modal-img {
+  height: 450px;
+  float: left;
+  padding: 20px;
+}
+
+hr {
+  border: solid #b7009e 3px;
+  width: 100px;
+  display: inline-block;
 }
 
 @media (max-width: 640px) {
