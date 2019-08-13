@@ -1,14 +1,19 @@
 import React, { Component, Fragment } from "react";
 
 export default class Beer extends Component {
-  state = { show: false };
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false
+    };
 
-  showModal = () => {
-    this.setState({ show: true });
+    this.toggleModal = this.toggleModal.bind(this);
   }
-  
-  hideModal = () => {
-    this.setState({ show: false });
+
+  toggleModal() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
 
   render() {
@@ -24,34 +29,36 @@ export default class Beer extends Component {
               <i className="far fa-star" onClick={() => toggleFavor(id)} />
             )}
           </div>
-          <img onClick={this.showModal} src={image_url} alt="Beer" />
+          <img onClick={this.toggleModal} src={image_url} alt="Beer" />
           <h3 className="cardTitle">
             <b>{name}</b>
           </h3>
           <p className="tagline">{tagline}</p>
         </figure>
-        <Modal show={this.state.show} handleClose={this.hideModal} >
-          <p>Modal</p>
-          <p>Data</p>
-        </Modal>
+        {this.state.isOpen && (
+          <Modal onToggleModal={this.toggleModal}>
+            <p>Modal</p>
+            <p>Data</p>
+          </Modal>
+        )}
       </Fragment>
     );
   }
 }
 
-const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show ? 'modal display-block' : 'modal display-none';
-
+const Modal = ({ children, onToggleModal }) => {
   return (
-    <div className={showHideClassName}>
-      <section className='modal-main'>
-        {children}
-        <button
-          onClick={handleClose}
-        >
-          Close
+    <div
+      className="background"
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+      onClick={onToggleModal}
+    >
+      <div className="window" onClick={event => event.stopPropagation()}>
+        <button className="close" onClick={onToggleModal}>
+          Close here
         </button>
-      </section>
+        {children}
+      </div>
     </div>
   );
 };

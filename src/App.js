@@ -23,21 +23,11 @@ class App extends Component {
   }
 
   toggleFavor(id) {
-    let selectedBeer = this.state.allBeers.filter(item => item.id === id);
-
-    if (!selectedBeer[0].favored) {
-      this.setState(prevState => ({
-        allBeers: prevState.allBeers.map(beer =>
-          beer.id === id ? { ...beer, favored: true } : beer
-        )
-      }));
-    } else {
-      this.setState(prevState => ({
-        allBeers: prevState.allBeers.map(beer =>
-          beer.id === id ? { ...beer, favored: false } : beer
-        )
-      }));
-    }
+    this.setState(prevState => ({
+      allBeers: prevState.allBeers.map(beer =>
+        beer.id === id ? { ...beer, favored: !beer.favored } : beer
+      )
+    }));
   }
 
   searchBeerApi(term) {
