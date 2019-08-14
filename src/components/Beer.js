@@ -1,34 +1,18 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 export default class Beer extends Component {
   constructor() {
     super();
     this.state = {
       isOpen: false,
-      random: []
     };
     this.toggleModal = this.toggleModal.bind(this);
-    this.randomBeers = this.randomBeers.bind(this);
   }
 
   toggleModal() {
     this.setState({
       isOpen: !this.state.isOpen
     });
-  }
-
-  randomBeers() {
-    const { allBeers } = this.props;
-
-    let ranArray = Array.from(
-      [1, 1, 1],
-      x => x * Math.floor(Math.random() * 80)
-    );
-    
-    ranArray = allBeers.filter(beer =>
-      beer.id === parseInt(ranArray[0]) || beer.id === parseInt(ranArray[1]) || beer.id === parseInt(ranArray[2]));
-
-    console.log(ranArray);
   }
 
   render() {
@@ -44,12 +28,11 @@ export default class Beer extends Component {
       ebc,
       description,
       bestServed,
+      similarBeers
     } = this.props;
 
-    this.randomBeers();
-
     return (
-      <Fragment>
+      <div>
         {this.state.isOpen && (
           <Modal onToggleModal={this.toggleModal}>
             <img
@@ -90,10 +73,11 @@ export default class Beer extends Component {
               </div>
               <div className="flex-three">
                 <div className="modal-card">
-                  {}
                 </div>
-                <div className="modal-card" />
-                <div className="modal-card" />
+                <div className="modal-card">
+                </div>
+                <div className="modal-card">
+                </div>
               </div>
             </div>
           </Modal>
@@ -112,7 +96,7 @@ export default class Beer extends Component {
           </h3>
           <p className="tagline">{tagline}</p>
         </figure>
-      </Fragment>
+      </div>
     );
   }
 }
