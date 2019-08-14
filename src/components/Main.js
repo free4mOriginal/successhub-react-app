@@ -22,6 +22,8 @@ export default class Main extends Component {
                   ebc={item.ebc}
                   description={item.description}
                   bestServed={item.bestServed}
+                  randomBeers={this.props.randomBeers}
+                  randomThree={this.props.randomThree}
                 />
               );
             })

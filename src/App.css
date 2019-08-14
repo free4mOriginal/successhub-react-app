@@ -5,6 +5,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: auto;
+  font-size: 11pt;
 }
 
 h1, h3, h5 {
@@ -15,7 +16,15 @@ h1, h3, h5 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px;
+  margin: 10px;
+}
+
+.flex-three {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5px;
+  clear: both;
 }
 
 .inner {
@@ -77,8 +86,8 @@ figure {
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 300px;
   border-radius: 5px;
   text-align: center;
   margin: 10px;
@@ -108,7 +117,7 @@ figure>div>.fa-star, .fa-times-circle {
   font-size: 1.2em;
 }
 
-.cardTitle {
+.card-title {
   color: #fe9814;
   margin: 0;
   padding-top: 20px;
@@ -136,8 +145,9 @@ figure>div>.fa-star, .fa-times-circle {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
-  width: 540px;
-  padding: 20px 30px 20px 20px;
+  width: 520px;
+  padding: 20px;
+  overflow: auto;
 }
 
 .modal-img {
@@ -160,8 +170,14 @@ hr {
   color: #5e5e5e;
 }
 
-.bestList {
+.best-list {
   color: #5e5e5e;
+}
+
+.modal-card {
+  border: solid gray 1px;
+  width: 150px;
+  height: 200px;
 }
 
 @media (max-width: 640px) {
@@ -174,7 +190,7 @@ hr {
   }
 
   figure {
-    width: 90%;
+    width: 100%;
   }
 
   .window {

@@ -15,6 +15,7 @@ class App extends Component {
     this.handleFavorites = this.handleFavorites.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
     this.toggleFavor = this.toggleFavor.bind(this);
+    this.randomBeers = this.randomBeers.bind(this);
   }
 
   handleFavorites() {
@@ -61,7 +62,12 @@ class App extends Component {
           searchBeerApi={this.searchBeerApi}
         />
         <Header searchBeerApi={this.searchBeerApi} />
-        <Main allBeers={this.state.allBeers} toggleFavor={this.toggleFavor} />
+        <Main
+          allBeers={this.state.allBeers}
+          toggleFavor={this.toggleFavor}
+          randomBeers={this.randomBeers}
+          randomThree={this.state.randomThree}
+        />
       </div>
     ) : (
       <p>Loading...</p>
