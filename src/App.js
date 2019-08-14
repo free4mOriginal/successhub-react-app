@@ -10,10 +10,12 @@ class App extends Component {
     super(props);
     this.state = {
       allBeers: [],
+      similar: []
     };
     this.handleFavorites = this.handleFavorites.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
     this.toggleFavor = this.toggleFavor.bind(this);
+    this.similarBeerApi = this.similarBeerApi.bind(this);
   }
 
   handleFavorites() {
@@ -36,6 +38,12 @@ class App extends Component {
     });
   }
 
+  similarBeerApi(num) {
+    Api.similarBeers(num).then(beerItems => {
+      this.setState({ similar: beerItems })
+    });
+  }
+
   componentDidMount() {
     this.searchBeerApi("");
   }
@@ -50,6 +58,8 @@ class App extends Component {
         <Header searchBeerApi={this.searchBeerApi} />
         <Main
           allBeers={this.state.allBeers}
+          similar={this.state.similar}
+          similarCall={this.similarBeerApi}
           toggleFavor={this.toggleFavor}
         />
       </div>

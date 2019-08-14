@@ -15,6 +15,11 @@ export default class Beer extends Component {
     });
   }
 
+  componentDidMount() {
+    console.log('here', this.props.ebc);
+    this.props.similarCall(100);
+  }
+
   render() {
     const {
       id,
@@ -28,7 +33,7 @@ export default class Beer extends Component {
       ebc,
       description,
       bestServed,
-      similarBeers
+      similar,
     } = this.props;
 
     return (
