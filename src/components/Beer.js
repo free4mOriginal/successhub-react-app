@@ -40,15 +40,32 @@ export default class Beer extends Component {
               alt="Beer"
               className="modal-img"
             />
-            <h3 className="cardTitle">
-              <b>{name}</b>
-            </h3>
-            <p className="tagline">{tagline}</p>
-            <hr className="line"/>
-            <br/>
-            <span><b>IBU:</b> {ibu}</span>
-            <span><b>ABV:</b> {abv}</span>
-            <span><b>EBC:</b> {ebc}</span>
+            <div>
+              <h3 className="cardTitle">
+                <b>{name}</b>
+              </h3>
+              <p className="tagline">{tagline}</p>
+              <hr className="line" />
+              <br />
+              <span className="numbers">
+                <b>IBU: </b> {ibu}
+              </span>
+              <span className="numbers">
+                <b>ABV: </b> {abv}
+              </span>
+              <span className="numbers">
+                <b>EBC: </b> {ebc}
+              </span>
+              <p className="description">{description}</p>
+              <p>
+                <b>Best served with:</b>
+              </p>
+              <ul className="bestList">
+                {bestServed.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </Modal>
         )}
         <figure>

@@ -17,6 +17,11 @@ export default class Main extends Component {
                   toggleFavor={this.props.toggleFavor}
                   id={item.id}
                   favored={item.favored}
+                  ibu={item.ibu}
+                  abv={item.abv}
+                  ebc={item.ebc}
+                  description={item.description}
+                  bestServed={item.bestServed}
                 />
               );
             })
