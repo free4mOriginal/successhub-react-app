@@ -7,8 +7,7 @@ body {
   margin: auto;
 }
 
-h1,
-h5 {
+h1, h3, h5 {
   margin: 0;
 }
 
@@ -138,11 +137,11 @@ figure>div>.fa-star, .fa-times-circle {
   border-radius: 5px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
   width: 540px;
-  padding: 20px;
+  padding: 20px 30px 20px 20px;
 }
 
 .modal-img {
-  height: 450px;
+  height: 400px;
   float: left;
   padding: 20px 40px 20px 20px;
 }

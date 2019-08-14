@@ -3,13 +3,14 @@ import "./App.css";
 import NavBar from "./components/Navbar";
 import Main from "./components/Main";
 import Header from "./components/Header";
-import Api from "./util/Api";
+import { Api } from "./util/Api";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       allBeers: [],
+      randomThree: []
     };
     this.handleFavorites = this.handleFavorites.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
@@ -36,11 +37,23 @@ class App extends Component {
     });
   }
 
+  randomBeers() {
+    const ranArray = Array.from(
+      [1, 1, 1],
+      x => x * Math.floor(Math.random() * 80)
+    );
+    this.setState({
+      randomThree: ranArray
+    });
+  }
+
   componentDidMount() {
     this.searchBeerApi("");
+    this.randomBeers();
   }
 
   render() {
+    console.log(this.state.randomThree);
     return this.state.allBeers ? (
       <div>
         <NavBar
@@ -48,10 +61,7 @@ class App extends Component {
           searchBeerApi={this.searchBeerApi}
         />
         <Header searchBeerApi={this.searchBeerApi} />
-        <Main
-          allBeers={this.state.allBeers}
-          toggleFavor={this.toggleFavor}
-        />
+        <Main allBeers={this.state.allBeers} toggleFavor={this.toggleFavor} />
       </div>
     ) : (
       <p>Loading...</p>

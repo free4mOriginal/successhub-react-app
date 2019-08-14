@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Api = {
+export const Api = {
   searchBeers(term) {
     if(!term) {
       return axios
@@ -44,4 +44,23 @@ const Api = {
   }
 };
 
-export default Api;
+export function randomBeers() {
+  return axios
+    .get('https://api.punkapi.com/v2/beers/random')
+    .then(res => {
+      return res.data.map(beerItem => {
+        return {
+          image_url: beerItem.image_url,
+          title: beerItem.name,
+          tagline: beerItem.tagline,
+          ibu: beerItem.ibu,
+          abv: beerItem.abv,
+          ebc: beerItem.ebc,
+          description: beerItem.description,
+          bestServed: beerItem.food_pairing,
+          favored: false,
+          id: beerItem.id
+        };
+      });
+    })
+};

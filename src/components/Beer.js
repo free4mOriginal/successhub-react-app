@@ -41,9 +41,9 @@ export default class Beer extends Component {
               className="modal-img"
             />
             <div>
-              <h3 className="cardTitle">
+              <h2 className="cardTitle">
                 <b>{name}</b>
-              </h3>
+              </h2>
               <p className="tagline">{tagline}</p>
               <hr className="line" />
               <br />
@@ -60,11 +60,17 @@ export default class Beer extends Component {
               <p>
                 <b>Best served with:</b>
               </p>
-              <ul className="bestList">
+              <ul>
                 {bestServed.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
+              <h3 className="cardTitle">
+                  <b>You might also like: </b>
+                </h3>
+              <div className="flex-container">
+                  {this.randomBeer()}
+              </div>
             </div>
           </Modal>
         )}
