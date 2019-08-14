@@ -10,12 +10,10 @@ class App extends Component {
     super(props);
     this.state = {
       allBeers: [],
-      randomThree: []
     };
     this.handleFavorites = this.handleFavorites.bind(this);
     this.searchBeerApi = this.searchBeerApi.bind(this);
     this.toggleFavor = this.toggleFavor.bind(this);
-    this.randomBeers = this.randomBeers.bind(this);
   }
 
   handleFavorites() {
@@ -38,23 +36,11 @@ class App extends Component {
     });
   }
 
-  randomBeers() {
-    const ranArray = Array.from(
-      [1, 1, 1],
-      x => x * Math.floor(Math.random() * 80)
-    );
-    this.setState({
-      randomThree: ranArray
-    });
-  }
-
   componentDidMount() {
     this.searchBeerApi("");
-    this.randomBeers();
   }
 
   render() {
-    console.log(this.state.randomThree);
     return this.state.allBeers ? (
       <div>
         <NavBar
@@ -65,8 +51,6 @@ class App extends Component {
         <Main
           allBeers={this.state.allBeers}
           toggleFavor={this.toggleFavor}
-          randomBeers={this.randomBeers}
-          randomThree={this.state.randomThree}
         />
       </div>
     ) : (

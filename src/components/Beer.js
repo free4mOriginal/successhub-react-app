@@ -4,15 +4,31 @@ export default class Beer extends Component {
   constructor() {
     super();
     this.state = {
-      isOpen: false
+      isOpen: false,
+      random: []
     };
     this.toggleModal = this.toggleModal.bind(this);
+    this.randomBeers = this.randomBeers.bind(this);
   }
 
   toggleModal() {
     this.setState({
       isOpen: !this.state.isOpen
     });
+  }
+
+  randomBeers() {
+    const { allBeers } = this.props;
+
+    let ranArray = Array.from(
+      [1, 1, 1],
+      x => x * Math.floor(Math.random() * 80)
+    );
+    
+    ranArray = allBeers.filter(beer =>
+      beer.id === parseInt(ranArray[0]) || beer.id === parseInt(ranArray[1]) || beer.id === parseInt(ranArray[2]));
+
+    console.log(ranArray);
   }
 
   render() {
@@ -28,9 +44,9 @@ export default class Beer extends Component {
       ebc,
       description,
       bestServed,
-      randomThree,
-      randomBeers
     } = this.props;
+
+    this.randomBeers();
 
     return (
       <Fragment>
@@ -62,25 +78,22 @@ export default class Beer extends Component {
               <p>
                 <b>Best served with:</b>
               </p>
-              <ul className="best-list">
+              <ul>
                 {bestServed.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-              <h3 className="card-title">
-                <b>You might also like: </b>
-              </h3>
+              <div className="might-like">
+                <h3 className="card-title">
+                  <b>You might also like: </b>
+                </h3>
+              </div>
               <div className="flex-three">
                 <div className="modal-card">
-
+                  {}
                 </div>
-                <div className="modal-card">
-                  
-                  </div>
-                  <div className="modal-card">
-                  
-                  </div>
-                {console.log(randomThree)}
+                <div className="modal-card" />
+                <div className="modal-card" />
               </div>
             </div>
           </Modal>

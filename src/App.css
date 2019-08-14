@@ -23,7 +23,10 @@ h1, h3, h5 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 5px;
+  margin: 10px 0 0 0;
+}
+
+.might-like {
   clear: both;
 }
 
@@ -101,7 +104,7 @@ figure:hover {
 
 figure>img {
   height: 180px;
-  padding: 20px;
+  padding: 30px 0 0 0;
 }
 
 .favorite {
@@ -145,15 +148,16 @@ figure>div>.fa-star, .fa-times-circle {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
-  width: 520px;
+  width: 560px;
+  height: 90%;
   padding: 20px;
   overflow: auto;
 }
 
 .modal-img {
-  height: 400px;
+  height: 360px;
   float: left;
-  padding: 20px 40px 20px 20px;
+  padding: 20px 30px 0 0;
 }
 
 hr {
@@ -170,13 +174,14 @@ hr {
   color: #5e5e5e;
 }
 
-.best-list {
+ul {
   color: #5e5e5e;
+  margin-left: 150px;
 }
 
 .modal-card {
   border: solid gray 1px;
-  width: 150px;
+  width: 170px;
   height: 200px;
 }
 
