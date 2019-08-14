@@ -176,7 +176,6 @@ hr {
 
 ul {
   color: #5e5e5e;
-  margin-left: 150px;
 }
 
 .modal-card {
@@ -205,5 +204,14 @@ ul {
   .modal-img {
     height: 200px;
     padding: 20px;
+  }
+
+  .flex-three {
+    flex-wrap: column;
+    justify-content: center;
+  }
+
+  .modal-card {
+    margin: 10px;
   }
 }
