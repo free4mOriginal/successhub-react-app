@@ -160,6 +160,26 @@ figure>div>.fa-star, .fa-times-circle {
   padding: 20px 30px 0 0;
 }
 
+.modal-card {
+  border: solid gray 1px;
+  width: 170px;
+  height: 200px;
+  display: block;
+  text-align: center;
+}
+
+.like-img {
+  height: 100px;
+  padding: 10px;
+}
+
+.like-title {
+  color: #fe9814;
+  margin: 0;
+  padding: 0 10px 0 10px;
+  font-size: 1.2em;
+}
+
 hr {
   border: solid #b7009e 3px;
   width: 100px;
@@ -176,12 +196,6 @@ hr {
 
 ul {
   color: #5e5e5e;
-}
-
-.modal-card {
-  border: solid gray 1px;
-  width: 170px;
-  height: 200px;
 }
 
 @media (max-width: 580px) {

@@ -38,7 +38,7 @@ export default class Beer extends Component {
             <img
               onClick={this.toggleModal}
               src={image_url}
-              alt="Beer"
+              alt={name}
               className="modal-img"
             />
             <div>
