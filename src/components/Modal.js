@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Api } from "../util/Api";
 
 export default class Modal extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      ebc: 100,
+      ebc: this.props.ebc,
       similar: []
     };
     this.similarBeerApi = this.similarBeerApi.bind(this);
@@ -39,7 +39,7 @@ export default class Modal extends Component {
             </h3>
           </div>
           <div className="flex-three">
-            <div className="modal-card">{}</div>
+            <div className="modal-card">{console.log(this.state.similar)}</div>
             <div className="modal-card" />
             <div className="modal-card" />
           </div>

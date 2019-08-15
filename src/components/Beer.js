@@ -34,7 +34,7 @@ export default class Beer extends Component {
     return (
       <div>
         {this.state.isOpen && (
-          <Modal onToggleModal={this.toggleModal}>
+          <Modal ebc={ebc} onToggleModal={this.toggleModal}>
             <img
               onClick={this.toggleModal}
               src={image_url}

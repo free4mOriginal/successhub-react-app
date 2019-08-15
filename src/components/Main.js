@@ -21,9 +21,7 @@ export default class Main extends Component {
                   ebc={item.ebc}
                   description={item.description}
                   bestServed={item.bestServed}
-                  // similar={this.props.similar}
                   toggleFavor={this.props.toggleFavor}
-                  // similarCall={this.props.similarCall}
                 />
               );
             })
