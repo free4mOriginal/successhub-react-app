@@ -184,7 +184,7 @@ ul {
   height: 200px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 580px) {
   body {
     font-size: smaller;
   }
@@ -194,7 +194,7 @@ ul {
   }
 
   figure {
-    width: 100%;
+    width: 240px;
   }
 
   .window {

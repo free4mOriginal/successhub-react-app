@@ -2,23 +2,6 @@ import React, { Component } from "react";
 import Beer from "./Beer";
 
 export default class Main extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     similarBeers: []
-  //   }
-  //   this.similarBeer = this.similarBeer.bind(this);
-  // }
-
-  // similarBeer() {
-  //   let ranArray = [];
-  //   for (let i=0; i<3; i++) {
-  //     ranArray.push(this.props.allBeers[Math.floor(Math.random() * 80)])
-  //   }
-  //   // console.log(ranArray);
-  //   return ranArray;
-  // }
-
   render() {
     return (
       <div className="flex-container">
