@@ -13,7 +13,7 @@ export default class Modal extends Component {
 
   similarBeerApi(num) {
     Api.similarBeers(num).then(beerItems => {
-      this.setState({ similar: beerItems });
+      this.setState({ similar: beerItems.slice(0, 3) });
     });
   }
 
