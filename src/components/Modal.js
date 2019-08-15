@@ -40,9 +40,19 @@ export default class Modal extends Component {
             </h3>
           </div>
           <div className="flex-three">
-            <Like />
-            <Like />
-            <Like />
+            {this.state.similar ? (
+              this.state.similar.map(item => {
+                return (
+                  <Like
+                    title={item.title}
+                    image_url={item.image_url}
+                    key={item.title}
+                  />
+                );
+              })
+            ) : (
+              <p>Loading...</p>
+            )}
           </div>
         </div>
       </div>
