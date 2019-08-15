@@ -28,9 +28,7 @@ export default class Beer extends Component {
       abv,
       ebc,
       description,
-      bestServed,
-      similar,
-      similarCall
+      bestServed
     } = this.props;
 
     return (
@@ -68,22 +66,7 @@ export default class Beer extends Component {
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-              <div className="might-like">
-                <h3 className="card-title">
-                  <b>You might also like: </b>
-                </h3>
-              </div>
-              <div className="flex-three">
-                <div className="modal-card">
-                  {}
-                </div>
-                <div className="modal-card">
-                </div>
-                <div className="modal-card">
-                </div>
-              </div>
             </div>
-            {console.log(similar)}
           </Modal>
         )}
         <figure>
