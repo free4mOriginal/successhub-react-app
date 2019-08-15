@@ -68,7 +68,7 @@ export default class Beer extends Component {
             </div>
           </Modal>
         )}
-        <figure onClick={this.toggleModal}>
+        <figure>
           <div className="favorite">
             {favored ? (
               <i className="fas fa-star" onClick={() => toggleFavor(id)} />
