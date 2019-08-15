@@ -46,6 +46,7 @@ class App extends Component {
 
   componentDidMount() {
     this.searchBeerApi("");
+    this.similarBeerApi(30);
   }
 
   render() {

@@ -14,7 +14,6 @@ export default class Main extends Component {
                   image_url={item.image_url}
                   name={item.title}
                   tagline={item.tagline}
-                  toggleFavor={this.props.toggleFavor}
                   id={item.id}
                   favored={item.favored}
                   ibu={item.ibu}
@@ -22,7 +21,8 @@ export default class Main extends Component {
                   ebc={item.ebc}
                   description={item.description}
                   bestServed={item.bestServed}
-                  similar={item.similar}
+                  similar={this.props.similar}
+                  toggleFavor={this.props.toggleFavor}
                   similarCall={this.props.similarCall}
                 />
               );

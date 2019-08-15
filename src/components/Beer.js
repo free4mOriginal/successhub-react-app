@@ -27,7 +27,8 @@ export default class Beer extends Component {
       abv,
       ebc,
       description,
-      bestServed
+      bestServed,
+      similar
     } = this.props;
 
     return (
@@ -72,6 +73,7 @@ export default class Beer extends Component {
               </div>
               <div className="flex-three">
                 <div className="modal-card">
+                  {console.log(similar)}
                 </div>
                 <div className="modal-card">
                 </div>
