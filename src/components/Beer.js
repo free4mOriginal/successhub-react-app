@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from './Modal';
 
 export default class Beer extends Component {
   constructor() {
@@ -28,7 +29,8 @@ export default class Beer extends Component {
       ebc,
       description,
       bestServed,
-      similar
+      similar,
+      similarCall
     } = this.props;
 
     return (
@@ -73,7 +75,7 @@ export default class Beer extends Component {
               </div>
               <div className="flex-three">
                 <div className="modal-card">
-                  {console.log(similar)}
+                  {}
                 </div>
                 <div className="modal-card">
                 </div>
@@ -81,6 +83,7 @@ export default class Beer extends Component {
                 </div>
               </div>
             </div>
+            {console.log(similar)}
           </Modal>
         )}
         <figure>
@@ -102,17 +105,3 @@ export default class Beer extends Component {
   }
 }
 
-const Modal = ({ children, onToggleModal }) => {
-  return (
-    <div
-      className="background"
-      style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
-      onClick={onToggleModal}
-    >
-      <div className="window" onClick={event => event.stopPropagation()}>
-        <i className="far fa-times-circle close" onClick={onToggleModal} />
-        {children}
-      </div>
-    </div>
-  );
-};
