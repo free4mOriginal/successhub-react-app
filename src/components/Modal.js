@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Like from "./Like";
 import { Api } from "../util/Api";
 
 export default class Modal extends Component {
@@ -39,9 +40,9 @@ export default class Modal extends Component {
             </h3>
           </div>
           <div className="flex-three">
-            <div className="modal-card">{console.log(this.state.similar)}</div>
-            <div className="modal-card" />
-            <div className="modal-card" />
+            <Like />
+            <Like />
+            <Like />
           </div>
         </div>
       </div>
