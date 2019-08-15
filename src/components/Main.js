@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Beer from "./Beer";
 
+// Main feed:
 export default class Main extends Component {
   render() {
     return (

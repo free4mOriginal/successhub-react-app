@@ -16,12 +16,14 @@ class App extends Component {
     this.toggleFavor = this.toggleFavor.bind(this);
   }
 
+  // Filters allBeers to only show favored beers:
   handleFavorites() {
     this.setState(prevState => ({
       allBeers: prevState.allBeers.filter(beer => beer.favored)
     }));
   }
 
+  // Toggles the favored property of allBeers on specified beer id:
   toggleFavor(id) {
     this.setState(prevState => ({
       allBeers: prevState.allBeers.map(beer =>
@@ -30,12 +32,15 @@ class App extends Component {
     }));
   }
 
+  // Calls up the beer Api with the search term and sets the allBeers state to result:
+  // (on initial call maximum allowed number of beers is set)
   searchBeerApi(term) {
     Api.searchBeers(term).then(beerItems => {
       this.setState({ allBeers: beerItems });
     });
   }
 
+  // Making the initial Api call:
   componentDidMount() {
     this.searchBeerApi("");
   }

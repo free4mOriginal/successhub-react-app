@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+// Header:
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -10,10 +11,12 @@ export default class Header extends Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
+  // Sets search term:
   handleTermChange(e) {
     this.setState({ term: e.target.value });
   }
 
+  // Calls beer Api with term from above:
   handleSearch() {
     this.props.searchBeerApi(this.state.term);
   }

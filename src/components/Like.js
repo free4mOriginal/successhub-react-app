@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+// Individual item from Similar items:
 class Like extends Component {
   render() {
     const { title, image_url, onToggleModal } = this.props;

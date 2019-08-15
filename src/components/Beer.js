@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Modal from './Modal';
 
+// Individual Beer cards (with Modal):
 export default class Beer extends Component {
   constructor() {
     super();
@@ -10,6 +11,7 @@ export default class Beer extends Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
+  // Turns Modal on or off:
   toggleModal() {
     this.setState({
       isOpen: !this.state.isOpen

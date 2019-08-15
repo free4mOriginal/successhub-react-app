@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Like from "./Like";
 import { Api } from "../util/Api";
 
+// Modal dialog:
 export default class Modal extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ export default class Modal extends Component {
     this.similarBeerApi = this.similarBeerApi.bind(this);
   }
 
+  // API call for similar beers:
   similarBeerApi(num) {
     Api.similarBeers(num).then(beerItems => {
       this.setState({ similar: beerItems.slice(0, 3) });
