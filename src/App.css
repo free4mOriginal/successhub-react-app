@@ -163,14 +163,15 @@ figure>div>.fa-star, .fa-times-circle {
 .modal-card {
   border: solid gray 1px;
   width: 170px;
-  height: 200px;
+  height: 220px;
   display: block;
   text-align: center;
+  
 }
 
 .like-img {
   height: 100px;
-  padding: 10px;
+  padding: 25px 0 10px 0;
 }
 
 .like-title {
