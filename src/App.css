@@ -157,7 +157,7 @@ figure>div>.fa-star, .fa-times-circle {
 .modal-img {
   height: 360px;
   float: left;
-  padding: 20px 30px 0 0;
+  padding: 20px 40px 0 5px;
 }
 
 .modal-card {

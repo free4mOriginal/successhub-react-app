@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 
-export class Like extends Component {
+class Like extends Component {
   render() {
-    const { title, image_url } = this.props;
+    const { title, image_url, onToggleModal } = this.props;
 
     return (
-      <div className="modal-card">
-        <img
-        //   onClick={this.toggleModal}
-          src={image_url}
-          alt={title}
-          className="like-img"
-        />
+      <div className="modal-card" onClick={onToggleModal}>
+        <img src={image_url} alt={title} className="like-img" />
         <h2 className="like-title">
           <b>{title}</b>
         </h2>

@@ -36,7 +36,6 @@ export default class Beer extends Component {
         {this.state.isOpen && (
           <Modal ebc={ebc} onToggleModal={this.toggleModal}>
             <img
-              onClick={this.toggleModal}
               src={image_url}
               alt={name}
               className="modal-img"
@@ -69,7 +68,7 @@ export default class Beer extends Component {
             </div>
           </Modal>
         )}
-        <figure>
+        <figure onClick={this.toggleModal}>
           <div className="favorite">
             {favored ? (
               <i className="fas fa-star" onClick={() => toggleFavor(id)} />

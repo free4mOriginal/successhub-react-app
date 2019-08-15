@@ -47,6 +47,7 @@ export default class Modal extends Component {
                     title={item.title}
                     image_url={item.image_url}
                     key={item.title}
+                    onToggleModal={onToggleModal}
                   />
                 );
               })
