@@ -12,6 +12,12 @@ h1, h3, h5 {
   margin: 0;
 }
 
+/* Credits */
+.credits {
+  text-align: center;
+  color: gray; 
+}
+
 /* Links pointer */
 span, .fa-search, .close {
   cursor: pointer;

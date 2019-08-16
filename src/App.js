@@ -57,7 +57,7 @@ class App extends Component {
           allBeers={this.state.allBeers}
           toggleFavor={this.toggleFavor}
         />
-        <p>&copy;2019 Zhana Liner | Web Development</p>
+        <p className="credits">&copy;2019 Zhana Liner | Web Development</p>
       </div>
     ) : (
       <p>Loading...</p>
